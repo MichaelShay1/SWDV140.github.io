@@ -1,46 +1,52 @@
 "use strict";
 
-let again = "y";
-// get investment amount - loop until user enters a number
-let investment = 0;
-do{
-do {
-    investment = parseFloat(
-        prompt("Enter investment amount as xxxxx.xx", 10000));
-}
-while ( isNaN(investment) || investment <= 0 );
+const calculateFutureValue = (investment, rate, years) => {
+    let futureValue = investment;
+    for (let i = 1; i <= years; i++ ) {
+        futureValue += futureValue * rate / 100;
+    }
+    return futureValue.toFixed(2);
+};
 
-// get interest rate - loop until user enters a number
-let rate = 0;
-do {
-    rate = parseFloat(prompt("Enter interest rate as xx.x", 7.5));
-}
-while ( isNaN(rate) || rate <= 0 || rate >= 15 );
+$(document).ready( () => {
+    $("#calculate").click( () => {
+        const investment = parseFloat($("#investment").val());
+        const rate = parseFloat($("#rate").val());
+        const years = parseFloat($("#years").val());
 
-// get number of years - loop until user enters a number
-let years = 0;
-do {
-    years = parseInt(prompt("Enter number of years", 10));
-}
-while ( isNaN(years) || years <= 0);
-	
-//write user data
-	document.write(`<h4>Investment amount = ${investment} Interest rate = ${rate} Years = ${years}</h4>`);
+        let isValid = true;
+        if (isNaN(investment) || investment <= 0 || investment > 10000) {
+            $("#investment").next().text("Must be a valid number greater than 0 and less than or equal to 10,000.");
+            isValid = false;
+        } else {
+            $("#investment").next().text("");
+        }
 
-// calulate future value
-let futureValue = investment;
-for (let i = 1; i <= years; i++ ) {
-    const interest = futureValue * rate / 100;
-	futureValue = futureValue + interest;
-	
-	// write results
-	document.write(`<p>Year=${i} Interest=${interest.toFixed(2)} Value=${futureValue.toFixed(2)}</p>`)
-}
+        if (isNaN(rate) || rate <= 0 || rate > 15) {
+            $("#rate").next().text("Must be a valid number greater than 0 and less than or equal to 15.")
+            isValid = false;
+        } else {
+            $("#rate").next().text("");
+        }
 
-// display results
-//document.write(html);
+        if (isNaN(years) || years <= 0 || years > 50) {
+            $("#years").next().text("Must be a valid number greater than 0 and less than or equal to 50.")
+            isValid = false;
+        } else {
+            $("#years").next().text("");
+        }
 
-//Ask to do it again
-	again = prompt("Repeat the calculation? (y/n)", "y");
-}
-while (again =="y");
+        if (isValid) {
+            $("#future_value").val(calculateFutureValue(investment, rate, years));
+        }
+		$("#clear").click( () => {
+			$(":text").val("");
+			$(":text").next().text("*");
+			$("#investment").focus();
+		})
+		$(":text").dblclick( () => {
+			$("#clear").click();
+		})
+    });
+    $("#investment").focus();
+});
