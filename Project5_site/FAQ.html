@@ -1,0 +1,90 @@
+<!doctype html>
+<!--Mod Log
+2.3.2021 - Stylize the answers to the questions
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FAQ | Mont Blanc Coffeehouse</title>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+	<div id= "page-container">
+	<header>
+		<!-- Navbar code -->
+		<div class="bg-img">
+			<div class="container">
+				<div class="navbar" id="myNavbar">
+					<a href="index.html">Home</a>
+					<a class="active" href="FAQ.html">FAQ</a>
+					<a href="Booking.html">Booking</a>
+					<a href="Contact.html">Contact</a>
+				</div>
+			</div>
+			<div class="hero-text">
+				<h1>Mont Blanc Coffeehouse</h1>
+				<h2>Frequently Asked Questions</h2>
+			</div>
+		</div>
+	</header>
+		<!-- These are where the questions/drop downs are set up-->
+	<main>
+		<button class="accordian-faq">What is the Tour Du Mont Blanc (TMB)?</button>
+		<div class="panel">
+			<p>The Tour Du Mont Blanc is a hiking trail in Europe. The trail stretches about 170 kilometers (106 Miles) and goes through France, Italy, and Switzerland. It is easily one of the most accessible and beautiful mountain ranges in the world.</p>
+		</div>
+		<button class="accordian-faq">Can I stay at the Mont Blanc Coffeehouse?</button>
+		<div class="panel">
+			<p>We do have limited rooms availible. Book early because they fill up fast. We have 2 private rooms(&#8364;80) and a Co-ed dorm with a shared bathroom.(&#8364;40)</p>
+		</div>
+		<button class="accordian-faq">Do you have patio seating?</button>
+		<div class="panel">
+			<p>We do have patio seating with a lovely view of Mont Blanc Masiff.</p>
+		</div>
+		<button class="accordian-faq">Do you have pack lunches for hikers availible?</button>
+		<div class="panel">
+			<p>We do have pack lunches availible for those that stay at the Mont Blanc Coffeehouse but they need to be reserved the night before because supplies are limited.</p>
+		</div>
+		<button class="accordian-faq">Which coffee roasters do you use?</button>
+		<div class="panel">
+			<p>Our roasters vary throughout the year but some of our featured roasters include: Square Mile Coffee Roasters, Sweet Bloom, Onyx, Belleville Brûlerie, and Grains De Folie.</p>
+		</div>
+		<button class="accordian-faq">How Do I get there?</button>
+		<div class="panel">
+			<p>Short Answer: Hike. This is a place holder for a future in window map/information.</p>
+		</div>
+		
+		
+	</main>
+	<footer>
+		<a href="mailto:example@email.com" class="footer-link">MontBlancCoffee@gmail.com</a><br>
+		<a href="tel:+33111-111-111" class="footer-link">+33 (111)-111-111</a>
+	</footer>
+	
+	<!-- Javascript (enables the dropdowns)-->
+	<script>
+		var acc = document.getElementsByClassName("accordian-faq");
+		var i;
+		
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				
+				var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block"
+				}
+			});
+		}
+	</script>
+	</div>
+</body>
+</html>

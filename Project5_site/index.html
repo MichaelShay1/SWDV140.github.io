@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mont Blanc Coffeehouse</title>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<!-- Mod Log
+2.3.21 - Modified FAQ to stylize question answers
+2.4.21 - Removed CSS Grid. Replaced Coffeehouse Image with slideshow.
+2.5.21 - Added margin to paragraph. Fixed Navbar Links.
+2.10.21 - Added Booking Page
+2.16.21 - Added RegEx. Filled out Confirm page.
+-->
+<body>
+	<header>
+		<!-- Navbar code -->
+		<div class="bg-img">
+			<div class="container">
+				<div class="navbar" id="myNavbar">
+					<a class="active" href="index.html">Home</a>
+					<a href="FAQ.html">FAQ</a>
+					<a href="Booking.html">Booking</a>
+					<a href="Contact.html">Contact</a>
+				</div>
+			</div>
+			<div class="hero-text">
+				<h1>Mont Blanc Coffeehouse</h1>
+				<h2>The Best Stop on your 165km journey</h2>
+			</div>
+		</div>
+	</header>
+	<main>
+		<!-- Slideshow container -->
+		<div class="slideshow-container">
+			<!-- The images with captions -->
+			<div class="mySlides fade">
+				<div class="numbertext">1/3</div>
+				<img src="assets/coffeeHouse.jpg" style="width: 100%" alt="Picture of coffeehouse">
+				<div class="text">Mont Blanc Coffeehouse</div>
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">2/3</div>
+				<img src="assets/bunks2.jpg" style="width: 100%" alt="Picture of coffeehouse">
+				<div class="text">Co-Ed Bunks</div>
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">3/3</div>
+				<img src="assets/exterior.jpg" style="width: 100%" alt="Picture of coffeehouse">
+				<div class="text">Exterior</div>
+			</div>
+			
+			<!-- Next and Previous buttons -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+		
+		<!-- The dots -->
+		<div style="text-align:center">
+  			<span class="dot" onclick="currentSlide(1)"></span>
+  			<span class="dot" onclick="currentSlide(2)"></span>
+  			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+		
+		<!--<div class="grid-container">
+				<div class="grid-image"><img src="assets/coffeeHouse.jpg" alt="Picture of the Coffehouse along the trail">
+				</div>-->
+			<div class="intro-text">
+				<h2>Welcome to your lunch stop or night off!</h2>
+				<p class="intro-paragraph">Established in 2009, the Mont Blanc Coffeehouse is a Coffeehouse/Inn along the 165km Tour Du Mont Blanc Trail. We have a rotating selection of roasters and suppliers, and we have rooms availible to rent.
+					Guests must book early because we fill up fast, especially in July and August. We provide breakfast, lunch, and dinner options. Including packed lunches for hikers. We offer spectacular
+					views of Mont Blanc, and the Mont Blanc range. We can book gear transport upon request.
+				</p>
+				
+			  <div class="intro-about-button">
+					<a href="Booking.html">Book Now</a>
+				</div>
+			</div>
+	  <!--</div>-->
+	</main>
+	<footer>
+		<a href="mailto:example@email.com" class="footer-link">MontBlancCoffee@gmail.com</a><br>
+		<a href="tel:+33111-111-111" class="footer-link">+33 (111)-111-111</a>
+	</footer>
+
+	<script>
+		// Slideshow Javascript
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+  		showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+  		showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+  		var i;
+  		var slides = document.getElementsByClassName("mySlides");
+  		var dots = document.getElementsByClassName("dot");
+  		if (n > slides.length) {slideIndex = 1}
+  		if (n < 1) {slideIndex = slides.length}
+  			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+  			}
+  			for (i = 0; i < dots.length; i++) {
+      			dots[i].className = dots[i].className.replace(" active", "");
+  			}
+  			slides[slideIndex-1].style.display = "block";
+  			dots[slideIndex-1].className += " active";
+		} 
+	</script>
+</body>
+</html>

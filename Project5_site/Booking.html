@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Booking | Mont Blanc Coffeehouse</title>
+	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+	<div id= "page-container">
+	<header>
+		<!-- Navbar code -->
+		<div class="bg-img">
+			<div class="container">
+				<div class="navbar" id="myNavbar">
+					<a href="index.html">Home</a>
+					<a href="FAQ.html">FAQ</a>
+					<a class="active" href="Booking.html">Booking</a>
+					<a href="Contact.html">Contact</a>
+				</div>
+			</div>
+			<div class="hero-text">
+				<h1>Mont Blanc Coffeehouse</h1>
+				<h2>Book With Us Here!</h2>
+			</div>
+		</div>
+	</header>
+		<!--Booking-->
+	<main>
+		<form action="confirm.html" method="get">
+			<div class="contact-container">
+				
+				<div>
+					<label for="first_name">First Name:</label>
+					<input type="text" name="first_name" id="first_name" pattern="[a-zA-Z]+" minlength="2">
+					<span>*</span>
+				</div>
+				<div>
+					<label for="last_name">Last Name:</label>
+					<input type="text" name="last_name" id="last_name" pattern="[a-zA-Z]+" minlength="2">
+					<span>*</span>
+				</div>
+				<div>
+					<label for="email_address">Email:</label>
+					<input type="email" name="email_address" id="email_address">
+					<span>*</span>
+				</div>
+				<div>
+					<label for="telephone">Telephone (XXX-XXXX):</label>
+					<input type="tel" name="telephone" id="telephone" pattern="/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/">
+				</div>
+				<div>
+					<input type="radio" id="dorm" name="room-type" value="dorm">
+					<label class="label-spacing" for="dorm">Co-ed Dorm/Bunks</label>
+					<input type="radio" id="private" name="room-type" value="private">
+					<label class="label-spacing" for="private">Private Room</label>
+
+				</div>
+				<div>
+                	<label for="comments">Comments:</label>
+                	<textarea name="comments" id="comments" rows="5" cols="40" maxlength="1000"></textarea>
+            	</div>
+				<div>
+                	<label>Terms of Service:</label>
+                	<input type="checkbox" name="terms" id="terms"
+                    value="yes">I accept
+                	<span>*</span>
+            	</div>
+            	<div>
+                	<label>&nbsp;</label>
+                	<input type="button" id="contact" value="Book Now">
+                	<input type="button" id="reset_form" value="Reset">
+            	</div>
+			</div>	
+		</form>
+		<footer>
+			<a href="mailto:example@email.com" class="footer-link">MontBlancCoffee@gmail.com</a><br>
+			<a href="tel:+33111-111-111" class="footer-link">+33 (111)-111-111</a>
+		</footer>
+	</main>
+	</div>
+	<script src="javascript/bookingscript.js"></script>
+</body>
+</html>
